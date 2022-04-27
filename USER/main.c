@@ -2,14 +2,14 @@
 
  
 /************************************************
- ALIENTEK ¾«Ó¢STM32F103¿ª·¢°åÊµÑé0
- ¹¤³ÌÄ£°å
- ×¢Òâ£¬ÕâÊÇÊÖ²áÖĞµÄĞÂ½¨¹¤³ÌÕÂ½ÚÊ¹ÓÃµÄmainÎÄ¼ş 
- ¼¼ÊõÖ§³Ö£ºwww.openedv.com
- ÌÔ±¦µêÆÌ£ºhttp://eboard.taobao.com 
- ¹Ø×¢Î¢ĞÅ¹«ÖÚÆ½Ì¨Î¢ĞÅºÅ£º"ÕıµãÔ­×Ó"£¬Ãâ·Ñ»ñÈ¡STM32×ÊÁÏ¡£
- ¹ãÖİÊĞĞÇÒíµç×Ó¿Æ¼¼ÓĞÏŞ¹«Ë¾  
- ×÷Õß£ºÕıµãÔ­×Ó @ALIENTEK
+ ALIENTEK ç²¾è‹±STM32F103å¼€å‘æ¿å®éªŒ0
+ å·¥ç¨‹æ¨¡æ¿
+ æ³¨æ„ï¼Œè¿™æ˜¯æ‰‹å†Œä¸­çš„æ–°å»ºå·¥ç¨‹ç« èŠ‚ä½¿ç”¨çš„mainæ–‡ä»¶ 
+ æŠ€æœ¯æ”¯æŒï¼šwww.openedv.com
+ æ·˜å®åº—é“ºï¼šhttp://eboard.taobao.com 
+ å…³æ³¨å¾®ä¿¡å…¬ä¼—å¹³å°å¾®ä¿¡å·ï¼š"æ­£ç‚¹åŸå­"ï¼Œå…è´¹è·å–STM32èµ„æ–™ã€‚
+ å¹¿å·å¸‚æ˜Ÿç¿¼ç”µå­ç§‘æŠ€æœ‰é™å…¬å¸  
+ ä½œè€…ï¼šæ­£ç‚¹åŸå­ @ALIENTEK
 ************************************************/
 
 
@@ -23,15 +23,15 @@
   GPIO_InitTypeDef  GPIO_InitStructure;
 	 
   RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB|
-  RCC_APB2Periph_GPIOE, ENABLE);	    //Ê¹ÄÜPB,PE¶Ë¿ÚÊ±ÖÓ
-  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_5;			    //LED0-->PB.5 ¶Ë¿ÚÅäÖÃ
-  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP; 	 //ÍÆÍìÊä³ö
-  GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;	 //IO¿ÚËÙ¶ÈÎª50MHz
-  GPIO_Init(GPIOB, &GPIO_InitStructure);			     //³õÊ¼»¯GPIOB.5
-  GPIO_SetBits(GPIOB,GPIO_Pin_5);					//PB.5 Êä³ö¸ß
-  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_5;	            //LED1-->PE.5ÍÆÍìÊä³ö
-  GPIO_Init(GPIOE, &GPIO_InitStructure);	  	       //³õÊ¼»¯GPIO
-  GPIO_SetBits(GPIOE,GPIO_Pin_5); 			 //PE.5 Êä³ö¸ß 	  
+  RCC_APB2Periph_GPIOE, ENABLE);	    //ä½¿èƒ½PB,PEç«¯å£æ—¶é’Ÿ
+  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_5;			    //LED0-->PB.5 ç«¯å£é…ç½®
+  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP; 	 //æ¨æŒ½è¾“å‡º
+  GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;	 //IOå£é€Ÿåº¦ä¸º50MHz
+  GPIO_Init(GPIOB, &GPIO_InitStructure);			     //åˆå§‹åŒ–GPIOB.5
+  GPIO_SetBits(GPIOB,GPIO_Pin_5);					//PB.5 è¾“å‡ºé«˜
+  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_5;	            //LED1-->PE.5æ¨æŒ½è¾“å‡º
+  GPIO_Init(GPIOE, &GPIO_InitStructure);	  	       //åˆå§‹åŒ–GPIO
+  GPIO_SetBits(GPIOE,GPIO_Pin_5); 			 //PE.5 è¾“å‡ºé«˜ 	  
   while(1)
 	{
 	  GPIO_ResetBits(GPIOB,GPIO_Pin_5);
