@@ -24,13 +24,14 @@
 
 #include <assert.h>
 #include <inttypes.h>
+#include "stm32f10x.h"
 
 #define	INLINE                      inline
 #define PR_BEGIN_EXTERN_C           extern "C" {
 #define	PR_END_EXTERN_C             }
 
-#define ENTER_CRITICAL_SECTION( )   
-#define EXIT_CRITICAL_SECTION( )    
+#define ENTER_CRITICAL_SECTION( )   __set_PRIMASK(1) /*关总中断*/
+#define EXIT_CRITICAL_SECTION( )    __set_PRIMASK(0) /*开总中断*/
 
 typedef uint8_t BOOL;
 
