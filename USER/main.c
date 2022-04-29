@@ -41,6 +41,9 @@ uint8_t ucRegDiscreteBuf[REG_DISCRETE_SIZE / 8] = {0x00,0x00};
  int main(void)
  {  
 	 NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);
+  
+	TIM4_Mode_Config();
+  
 /**
   * @brief  串口初始化
   * @param  从站地址：0x01 
@@ -52,6 +55,7 @@ uint8_t ucRegDiscreteBuf[REG_DISCRETE_SIZE / 8] = {0x00,0x00};
   eMBEnable(); //启动FreeModbus 
   while(1)
 	{ 
+    usRegHoldingBuf[0]=TIM4->CNT;
 		eMBPoll();
 //		usRegHoldingBuf[REG_HOLDING_START]++;//对Poll循环计数
 	}
