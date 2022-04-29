@@ -365,7 +365,7 @@
               <MiscControls></MiscControls>
               <Define>STM32F10X_HD,USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>..\USER;..\CORE;..\STM32F10x_FWLib\inc;..\SYSTEM\delay;..\SYSTEM\sys;..\SYSTEM\usart;..\modbus\ascii;..\modbus\include;..\modbus\port;..\modbus\rtu;..\modbus\tcp</IncludePath>
+              <IncludePath>..\USER;..\CORE;..\STM32F10x_FWLib\inc;..\SYSTEM\delay;..\SYSTEM\sys;..\SYSTEM\usart;..\modbus\ascii;..\modbus\include;..\modbus\port;..\modbus\rtu;..\modbus\tcp;..\orthogonal</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -667,6 +667,16 @@
               <FileName>porttimer.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\modbus\port\porttimer.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>orthogonal</GroupName>
+          <Files>
+            <File>
+              <FileName>zjjm.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\orthogonal\zjjm.c</FilePath>
             </File>
           </Files>
         </Group>
