@@ -41,7 +41,7 @@ xMBPortTimersInit( USHORT usTim1Timerout50us )
   //
   uint16_t PrescalerValue = 0;
   
-  //使能定时器4时钟
+  //使能定时器3时钟
   RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM3, ENABLE);
   
   //定时器时间基配置说明
@@ -61,7 +61,7 @@ xMBPortTimersInit( USHORT usTim1Timerout50us )
   
   //
 //  NVIC_PriorityGroupConfig(NVIC_PriorityGroup_1);
-  //定时器4中断优先级
+  //定时器3中断优先级
   NVIC_InitStructure.NVIC_IRQChannel = TIM3_IRQn;
   NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 0;
   NVIC_InitStructure.NVIC_IRQChannelSubPriority = 2;
@@ -70,9 +70,9 @@ xMBPortTimersInit( USHORT usTim1Timerout50us )
   
   //清除溢出中断标志位
   TIM_ClearITPendingBit(TIM3,TIM_IT_Update);
-  //定时器4溢出中断关闭
+  //定时器3溢出中断关闭
   TIM_ITConfig(TIM3, TIM_IT_Update, DISABLE);
-  //定时器4禁能
+  //定时器3禁能
   TIM_Cmd(TIM3,  DISABLE);
   return TRUE;
 }
@@ -84,9 +84,9 @@ vMBPortTimersEnable(  )
     /* Enable the timer with the timeout passed to xMBPortTimersInit( ) */
   TIM_ClearITPendingBit(TIM3, TIM_IT_Update);
   TIM_ITConfig(TIM3, TIM_IT_Update, ENABLE);
-  //设定定时器4的初始值
+  //设定定时器3的初始值
   TIM_SetCounter(TIM3,0x0000); 
-  //定时器4启动
+  //定时器3启动
   TIM_Cmd(TIM3, ENABLE);
 }
 
@@ -97,7 +97,7 @@ vMBPortTimersDisable(  )
   TIM_ClearITPendingBit(TIM3, TIM_IT_Update);
   TIM_ITConfig(TIM3, TIM_IT_Update, DISABLE);
   TIM_SetCounter(TIM3,0x0000); 
-  //关闭定时器4
+  //关闭定时器3
   TIM_Cmd(TIM3, DISABLE);
 }
 
@@ -111,7 +111,7 @@ static void prvvTIMERExpiredISR( void )
 }
 
 /**
-  * @brief  定时器4中断服务函数
+  * @brief  定时器3中断服务函数
   * @param  None
   * @retval None
   */
@@ -119,7 +119,7 @@ void TIM3_IRQHandler(void)
 {
   if (TIM_GetITStatus(TIM3, TIM_IT_Update) != RESET)
   {
-    //清除定时器T4溢出中断标志位
+    //清除定时器T3溢出中断标志位
     TIM_ClearITPendingBit(TIM3, TIM_IT_Update);
 
     prvvTIMERExpiredISR( );
