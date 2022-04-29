@@ -1,12 +1,7 @@
 #include "stm32f10x.h"
 #include "delay.h"
-#include "led.h"
 #include "myus.h"
-#include "hongw.h"
-#include "hcsr.h"
-#include "pwm.h"
 #include "zjjm.h"
-#include "pid.h"
 
 typedef union //定义结构体，参考https://blog.csdn.net/ls667/article/details/50811519博客
 {
@@ -25,7 +20,6 @@ int main(void)
 	u8 send_date[4] = {0};
 
 	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);
-	My_LED_Init();
 	delay_init();
 	TIM4_Mode_Config();
 	My_US_Init();

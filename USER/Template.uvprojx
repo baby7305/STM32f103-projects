@@ -365,7 +365,7 @@
               <MiscControls></MiscControls>
               <Define>STM32F10X_MD,USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>..\USER;..\CORE;..\STM32F10x_FWLib\inc;..\SYSTEM\delay;..\SYSTEM\sys;..\SYSTEM\usart;..\HARDWARE\LED;..\HARDWARE\USART;..\HARDWARE\HONGWAI;..\HARDWARE\HCSR04;..\HARDWARE\PWM;..\HARDWARE\ZJJM;..\HARDWARE\PID</IncludePath>
+              <IncludePath>..\USER;..\CORE;..\STM32F10x_FWLib\inc;..\SYSTEM\delay;..\SYSTEM\sys;..\SYSTEM\usart;..\HARDWARE\USART;..\HARDWARE\ZJJM</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -594,39 +594,14 @@
           <GroupName>HARDWARE</GroupName>
           <Files>
             <File>
-              <FileName>led.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\HARDWARE\LED\led.c</FilePath>
-            </File>
-            <File>
               <FileName>myus.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\HARDWARE\USART\myus.c</FilePath>
             </File>
             <File>
-              <FileName>hongw.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\HARDWARE\HONGWAI\hongw.c</FilePath>
-            </File>
-            <File>
-              <FileName>hcsr.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\HARDWARE\HCSR04\hcsr.c</FilePath>
-            </File>
-            <File>
-              <FileName>pwm.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\HARDWARE\PWM\pwm.c</FilePath>
-            </File>
-            <File>
               <FileName>zjjm.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\HARDWARE\ZJJM\zjjm.c</FilePath>
-            </File>
-            <File>
-              <FileName>pid.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\HARDWARE\PID\pid.c</FilePath>
             </File>
           </Files>
         </Group>

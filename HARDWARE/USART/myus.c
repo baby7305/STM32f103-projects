@@ -1,6 +1,4 @@
 #include "myus.h"
-#include "pwm.h"
-#include "led.h"
 void My_US_Init(void)
 {
 	GPIO_InitTypeDef GPIO_InitStrue;
